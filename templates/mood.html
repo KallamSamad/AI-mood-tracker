@@ -1,40 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mood Quiz</title>
 </head>
 <body>
-    
+
+<div class="head">
+        <button class="left"><img src="\Assets\Images\left.svg" height="50px">Back</button>
+    <div class="cont1">
+        <h3>In the past week, to what extent do you feel </h3>
+    <div class="mood">
+    </div>
+    <form class="ansform" required>
+          <label>Answer</label>
+        <label>1<input name="answer" value="1" type="radio"  ></label>
+        <label>2<input name="answer" value="2" type="radio"></label>
+        <label>3<input type="radio" value="3" name="answer"></label>
+        <label>4<input type="radio"value="4"  name="answer"></label>
+        <label>5<input type="radio" value="5" name="answer"></label>
+        <button class="submit" type="submit">Submit</button>
+
+
+    </form>
+       
+        </div>
+ <button class="right"><img src="\Assets\Images\right.svg" height="50px">Next</button>
+
+</div>
+<div class="middle"></div>
+<div class="bottom"></div>
 </body>
 <script>
-    let mood = [{
-        interested: 3,
-        distressed: 3,
-        excited: 3,
-        upset:3,
-        strong:3,
-        guilty:3,
-        scared:3,
-        hostile:3,
-        enthusiastic:3,
-        proud:3,
-        irritable:3,
-        alert:3,
-        ashamed:3,
-        inspired:3,
-        nervous:3,
-        determined:3,
-        attentive:3,
-        jittery:3,
-        active:3,
-        afraid:3,
-    }]
 
-for(let x=0;x<20;x++){
-    console.log(mood[x]);
-}
+const emotion=document.querySelector(".mood")
+const back=document.querySelector(".left")
+const next=document.querySelector(".right")
+const submit=document.querySelector(".submit")
+ 
+submit.style.display="none"
+
+    let mood = [
+        {emotion:
+        "Interested", score: 3
+        },
+
+        {emotion:
+        "Distressed", score: 3,
+        },
+
+        {emotion:
+        "Excited", score: 3,
+        },
+
+        {emotion: 
+        "Upset", score:3,
+        },
+        {
+        emotion:
+        "Strong", score:3,
+        },
+
+        {
+        emotion:
+        "Guilty", score:3,
+        },
+        {
+        emotion:
+        "Scared", score:3,
+        },
+        {
+        emotion:
+        "Hostile",score:3,
+        },
+        {
+        emotion:
+        "Enthusiastic", score:3,
+        },
+        {
+        emotion:
+        "Proud", score:3,
+        },
+        {
+        emotion:
+        "Irritable", score:3,
+        },
+        {
+        emotion:
+        "Alert", score:3,
+        },
+        {
+        emotion:
+        "Ashamed", score:3,
+        },
+        {
+        emotion:
+        "Inspired", score:3,
+        },
+        {
+        emotion:
+        "Nervous", score:3,
+        },
+        {
+        emotion:
+        "Determined",score:3,
+        },
+        {
+        emotion:
+        "Attentive",score:3,
+        },
+        {
+        emotion:
+        "Jittery", score:3,
+        },
+        {
+        emotion:
+        "Active",score:3,
+        },
+        {
+        emotion:
+        "Afraid",score:3,
+    }]
+ 
+let index=0;
+emotion.innerHTML=(mood[0].emotion)+"?"
+ 
+back.addEventListener("click", function(){
+    if (index==0){
+        const answer=document.querySelector('input[name="answer"]:checked')
+        if(answer==null){
+            console.log("Enter buttom")
+        }
+        else{
+            answer.value
+            emotion.innerHTML=(mood[0].emotion)
+            mood[index].score=answer
+            console.log(answer)
+        
+        }
+    }
+    
+
+    else{
+        submit.style.display="none"
+        emotion.innerHTML=(mood[index-1].emotion)
+        mood[index].score=answer
+        console.log(answer)
+        index=index-1
+        
+    }
+
+})
+
+next.addEventListener("click", function(){
+    if(index<19){
+        const answer=document.querySelector('input[name="answer"]:checked')
+        if(answer==null){
+            console.log("Enter buttom")
+        }
+        else{
+        answer.value;
+        emotion.innerHTML=(mood[index+1].emotion)
+        mood[index].score=answer
+        console.log(answer)
+        index=index+1
+        }
+     } 
+    else if(index==19){
+        submit.style.display="flex"
+        emotion.innerHTML=(mood[19].emotion)
+        mood[index].score=answer
+        console.log(answer)
+
+
+
+
+
+    }
+ 
+
+})
+ 
+ 
+
+
+
+
+
 
 </script>
 </html>

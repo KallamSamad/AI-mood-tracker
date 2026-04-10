@@ -1,0 +1,37 @@
+.head{
+    display: flex;
+    background-color: antiquewhite;
+    height: 100%;
+    font-family:Arial, Helvetica, sans-serif;
+    justify-content: space-between;
+    align-items:;
+}
+
+ .left{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+ }
+  .right{
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+ }
+
+ .mood{
+    text-align: center;
+    font-weight: 200;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+ 
+ .ansform{
+    border: 1px solid black;
+ }
+ form{
+    display:flex;
+    gap: 20px;
+ }
+ .formsub{
+    border-radius: 50px;
+ }
