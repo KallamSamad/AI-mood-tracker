@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mood Quiz</title>
 </head>
 <body>
     
 </body>
 <script>
-    let mood = {
+    let mood = [{
         interested: 3,
         distressed: 3,
         excited: 3,
@@ -29,11 +29,12 @@
         attentive:3,
         jittery:3,
         active:3,
-        afraid:3
-    }
+        afraid:3,
+    }]
 
-for(let x=0;x<21;x++){
-    console.log(mood.interested);
+for(let x=0;x<20;x++){
+    console.log(mood[x]);
 }
+
 </script>
 </html>
