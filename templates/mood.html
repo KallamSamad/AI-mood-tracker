@@ -11,7 +11,7 @@
 <div class="head">
         <button class="left"><img src="\Assets\Images\left.svg" height="50px">Back</button>
     <div class="cont1">
-        <h3>In the past week, to what extent do you feel </h1>
+        <h3>In the past week, to what extent do you feel </h3>
     <div class="mood"></div>
         </div>
  <button class="right"><img src="\Assets\Images\right.svg" height="50px">Next</button>
@@ -111,29 +111,26 @@ let index=0;
 emotion.innerHTML=(mood[0].emotion)+"?"
  
 back.addEventListener("click", function(){
-    emotion.innerHTML=(mood[index-1].emotion)
-    index=index-1
-    if(index<0){
+    if (index==0){
         emotion.innerHTML=(mood[0].emotion)
-
     }
-    else if(index>20){
-        emotion.innerHTML=(mood[19].emotion)
+    
 
+    else{
+        emotion.innerHTML=(mood[index-1].emotion)
+        index=index-1
     }
 
 })
 
 next.addEventListener("click", function(){
-     emotion.innerHTML=(mood[index+1].emotion)
-     index=index+1
-    if(index<0){
-        emotion.innerHTML=(mood[0].emotion)
-
-    }
-    else if(index>20){
+     if(index==19){
         emotion.innerHTML=(mood[19].emotion)
 
+    }
+    else{
+        emotion.innerHTML=(mood[index+1].emotion)
+        index=index+1
     }
 
 })
