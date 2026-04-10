@@ -106,9 +106,7 @@ const back=document.querySelector(".left")
         "Afraid",score:3,
     }]
 
-
-
-
+emotion.innerHTML=(mood[0].emotion)
  
 back.addEventListener("click", function(){
      if (mood[0].emotion=="Intersted"){
@@ -119,6 +117,14 @@ back.addEventListener("click", function(){
      console.log(mood[0].emotion)
 })
 
+right.addEventListener("click", function(){
+     if (mood[0].emotion=="Intersted"){
+        emotion.innerHTML="Intersted";
+
+
+     }
+     console.log(mood[0].emotion)
+})
  
 
 
