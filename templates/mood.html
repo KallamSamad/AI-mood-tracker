@@ -18,84 +18,103 @@
 <div class="bottom"></div>
 </body>
 <script>
+
+const display=document.querySelector(".mood")
     let mood = [
-        emotion={
-        Interested: 3,
+        {emotion:
+        "Interested", score: 3
         },
 
-        emotion={
-        Distressed: 3,
+        {emotion:
+        "Distressed", score: 3,
         },
 
-        emotion={
-        Excited: 3,
+        {emotion:
+        "Excited", score: 3,
         },
 
-        emotion={
-        Upset:3,
+        {emotion: 
+        "Upset", score:3,
         },
-        
-        emotion={
-        Strong:3,
-        },
-
-        emotion={
-        Guilty:3,
+        {
+        emotion:
+        "Strong", score:3,
         },
 
-        emotion={
-        Scared:3,
+        {
+        emotion:
+        "Guilty", score:3,
         },
-        emotion={
-        Hostile:3,
+        {
+        emotion:
+        "Scared", score:3,
         },
-        emotion={
-        Enthusiastic:3,
+        {
+        emotion:
+        "Hostile",score:3,
         },
-        emotion={
-        Proud:3,
+        {
+        emotion:
+        "Enthusiastic", score:3,
         },
-        emotion={
-        Irritable:3,
+        {
+        emotion:
+        "Proud", score:3,
         },
-        emotion={
-        Alert:3,
+        {
+        emotion:
+        "Irritable", score:3,
         },
-        emotion={
-        Ashamed:3,
+        {
+        emotion:
+        "Alert", score:3,
         },
-        emotion={
-        Inspired:3,
+        {
+        emotion:
+        "Ashamed", score:3,
         },
-        emotion={
-        Nervous:3,
+        {
+        emotion:
+        "Inspired", score:3,
         },
-        emotion={
-        Determined:3,
+        {
+        emotion:
+        "Nervous", score:3,
         },
-        emotion={
-        Attentive:3,
+        {
+        emotion:
+        "Determined",score:3,
         },
-        emotion={
-        Jittery:3,
+        {
+        emotion:
+        "Attentive",score:3,
         },
-        emotion={
-        Active:3,
+        {
+        emotion:
+        "Jittery", score:3,
         },
-        emotion={
-        Afraid:3,
+        {
+        emotion:
+        "Active",score:3,
+        },
+        {
+        emotion:
+        "Afraid",score:3,
     }]
 
 
 
-for(let x=0;x<20;x++){
-    console.log(mood[x])
+
+ 
+
+function question(index){
+     return mood[index]
+
 
 }
 
-function question(index){
-    
-
+for(let x=0;x<20;x++){
+    console.log((mood[x].emotion))
 
 }
 
