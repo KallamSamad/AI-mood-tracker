@@ -9,12 +9,12 @@
 <body>
 
 <div class="head">
-        <div class="left"><img src="\Assets\Images\left.svg" height="50px">Back</div>
+        <button class="left"><img src="\Assets\Images\left.svg" height="50px">Back</button>
     <div class="cont1">
         <h3>In the past week, to what extent do you feel </h1>
     <div class="mood"></div>
         </div>
- <div class="right"><img src="\Assets\Images\right.svg" height="50px">Next</div>
+ <button class="right"><img src="\Assets\Images\right.svg" height="50px">Next</button>
 
 </div>
 <div class="middle"></div>
@@ -24,6 +24,7 @@
 
 const emotion=document.querySelector(".mood")
 const back=document.querySelector(".left")
+const next=document.querySelector(".right")
     let mood = [
         {emotion:
         "Interested", score: 3
@@ -105,25 +106,36 @@ const back=document.querySelector(".left")
         emotion:
         "Afraid",score:3,
     }]
-
-emotion.innerHTML=(mood[0].emotion)
+console.log(mood[19].emotion)
+let index=0;
+emotion.innerHTML=(mood[0].emotion)+"?"
  
 back.addEventListener("click", function(){
-     if (mood[0].emotion=="Intersted"){
-        emotion.innerHTML="Intersted";
+    emotion.innerHTML=(mood[index-1].emotion)
+    index=index-1
+    if(index<0){
+        emotion.innerHTML=(mood[0].emotion)
 
+    }
+    else if(index>20){
+        emotion.innerHTML=(mood[19].emotion)
 
-     }
-     console.log(mood[0].emotion)
+    }
+
 })
 
-right.addEventListener("click", function(){
-     if (mood[0].emotion=="Intersted"){
-        emotion.innerHTML="Intersted";
+next.addEventListener("click", function(){
+     emotion.innerHTML=(mood[index+1].emotion)
+     index=index+1
+    if(index<0){
+        emotion.innerHTML=(mood[0].emotion)
 
+    }
+    else if(index>20){
+        emotion.innerHTML=(mood[19].emotion)
 
-     }
-     console.log(mood[0].emotion)
+    }
+
 })
  
 

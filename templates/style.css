@@ -17,3 +17,11 @@
     flex-direction: column;
     border: solid 1px black;
  }
+
+ .mood{
+    text-align: center;
+    font-weight: 200;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+ 
