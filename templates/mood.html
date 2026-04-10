@@ -135,6 +135,7 @@ back.addEventListener("click", function(){
     
 
     else{
+        submit.style.display="none"
         emotion.innerHTML=(mood[index-1].emotion)
         index=index-1
     }
@@ -142,31 +143,23 @@ back.addEventListener("click", function(){
 })
 
 next.addEventListener("click", function(){
-     if(index==19){
-        emotion.innerHTML=(mood[19].emotion)
-        submit.style.display="flex"
-
-
-    }
-    else{
+    if(index<19){
         emotion.innerHTML=(mood[index+1].emotion)
         index=index+1
+    } 
+    if(index==19){
+        submit.style.display="flex"
+        emotion.innerHTML=(mood[19].emotion)
+
+
+
     }
+ 
 
 })
  
 
-submit.addEventListener("click", function(){
-     if(index==19){
-        emotion.innerHTML=(mood[19].emotion)
 
-    }
-    else{
-        emotion.innerHTML=(mood[index+1].emotion)
-        index=index+1
-    }
-
-})
 
 
 
