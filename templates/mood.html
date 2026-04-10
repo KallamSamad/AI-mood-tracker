@@ -14,13 +14,13 @@
         <h3>In the past week, to what extent do you feel </h3>
     <div class="mood">
     </div>
-    <form class="ansform">
+    <form class="ansform" required>
           <label>Answer</label>
-        <label>1<input name="answer" type="radio"></label>
-        <label>2<input name="answer" type="radio"></label>
-        <label>3<input type="radio" name="answer"></label>
-        <label>4<input type="radio" name="answer"></label>
-        <label>5<input type="radio" name="answer"></label>
+        <label>1<input name="answer" value="1" type="radio"  ></label>
+        <label>2<input name="answer" value="2" type="radio"></label>
+        <label>3<input type="radio" value="3" name="answer"></label>
+        <label>4<input type="radio"value="4"  name="answer"></label>
+        <label>5<input type="radio" value="5" name="answer"></label>
         <button class="submit" type="submit">Submit</button>
 
 
@@ -39,7 +39,7 @@ const emotion=document.querySelector(".mood")
 const back=document.querySelector(".left")
 const next=document.querySelector(".right")
 const submit=document.querySelector(".submit")
-
+ 
 submit.style.display="none"
 
     let mood = [
@@ -129,27 +129,52 @@ emotion.innerHTML=(mood[0].emotion)+"?"
  
 back.addEventListener("click", function(){
     if (index==0){
-        emotion.innerHTML=(mood[0].emotion)
-         
+        const answer=document.querySelector('input[name="answer"]:checked')
+        if(answer==null){
+            console.log("Enter buttom")
+        }
+        else{
+            answer.value
+            emotion.innerHTML=(mood[0].emotion)
+            mood[index].score=answer
+            console.log(answer)
+        
+        }
     }
     
 
     else{
         submit.style.display="none"
         emotion.innerHTML=(mood[index-1].emotion)
+        mood[index].score=answer
+        console.log(answer)
         index=index-1
+        
     }
 
 })
 
 next.addEventListener("click", function(){
     if(index<19){
+        const answer=document.querySelector('input[name="answer"]:checked')
+        if(answer==null){
+            console.log("Enter buttom")
+        }
+        else{
+        answer.value;
         emotion.innerHTML=(mood[index+1].emotion)
+        mood[index].score=answer
+        console.log(answer)
         index=index+1
-    } 
-    if(index==19){
+        }
+     } 
+    else if(index==19){
         submit.style.display="flex"
         emotion.innerHTML=(mood[19].emotion)
+        mood[index].score=answer
+        console.log(answer)
+
+
 
 
 
@@ -158,6 +183,8 @@ next.addEventListener("click", function(){
 
 })
  
+ 
+
 
 
 
