@@ -25,3 +25,13 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
  }
  
+ .ansform{
+    border: 1px solid black;
+ }
+ form{
+    display:flex;
+    gap: 20px;
+ }
+ .formsub{
+    border-radius: 50px;
+ }
