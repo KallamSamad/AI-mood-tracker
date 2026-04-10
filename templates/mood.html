@@ -21,7 +21,7 @@
         <label>3<input type="radio" name="answer"></label>
         <label>4<input type="radio" name="answer"></label>
         <label>5<input type="radio" name="answer"></label>
-        <button type="submit">Submit</button>
+        <button class="submit" type="submit">Submit</button>
 
 
     </form>
@@ -38,6 +38,10 @@
 const emotion=document.querySelector(".mood")
 const back=document.querySelector(".left")
 const next=document.querySelector(".right")
+const submit=document.querySelector(".submit")
+
+submit.style.display="none"
+
     let mood = [
         {emotion:
         "Interested", score: 3
@@ -119,13 +123,14 @@ const next=document.querySelector(".right")
         emotion:
         "Afraid",score:3,
     }]
-console.log(mood[19].emotion)
+ 
 let index=0;
 emotion.innerHTML=(mood[0].emotion)+"?"
  
 back.addEventListener("click", function(){
     if (index==0){
         emotion.innerHTML=(mood[0].emotion)
+         
     }
     
 
@@ -139,6 +144,8 @@ back.addEventListener("click", function(){
 next.addEventListener("click", function(){
      if(index==19){
         emotion.innerHTML=(mood[19].emotion)
+        submit.style.display="flex"
+
 
     }
     else{
@@ -148,6 +155,19 @@ next.addEventListener("click", function(){
 
 })
  
+
+submit.addEventListener("click", function(){
+     if(index==19){
+        emotion.innerHTML=(mood[19].emotion)
+
+    }
+    else{
+        emotion.innerHTML=(mood[index+1].emotion)
+        index=index+1
+    }
+
+})
+
 
 
 </script>
